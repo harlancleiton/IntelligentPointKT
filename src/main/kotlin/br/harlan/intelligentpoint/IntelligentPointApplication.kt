@@ -28,7 +28,7 @@ class IntelligentPointApplication(val companyRepository: CompanyRepository,
                 PasswordUtil.encoder("123456"), "25708317000", "123", profileAdmin, company.id!!)
         employeeRepository.save(admin)
 
-        val profileUser: Set<ProfileEnum> = setOf(ProfileEnum.ROLE_USER, ProfileEnum.ROLE_ADMIN)
+        val profileUser: Set<ProfileEnum> = setOf(ProfileEnum.ROLE_USER)
         val employee: Employee = Employee("Employee",
                 "employee@company.com", PasswordUtil.encoder("123456"),
                 "44325441557", "123", profileUser, company.id)
