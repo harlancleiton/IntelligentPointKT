@@ -2,8 +2,10 @@ package br.harlan.intelligentpoint.documents
 
 import br.harlan.intelligentpoint.enums.LaunchTypeEnum
 import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 import java.util.*
 
+@Document
 data class Launch(
         val date: Date,
         val type: LaunchTypeEnum,

@@ -22,10 +22,12 @@ class CompanyServiceImpl(val companyRepository: CompanyRepository) : CompanyServ
     }
 
     override fun findByCnpj(cnpj: String): Optional<Company> {
+        logger.info("Find Company by CNPJ: {}", cnpj)
         return companyRepository.findByCnpj(cnpj);
     }
 
     override fun insert(company: Company): Company {
+        logger.info("Inserting Company: {}", company)
         return companyRepository.save(company)
     }
 }
