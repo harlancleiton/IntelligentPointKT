@@ -26,7 +26,7 @@ class LaunchServiceImpl(val launchRepository: LaunchRepository) : LaunchService 
 
     override fun findByEmplooyeId(employeeId: String, pageable: Pageable): Page<Launch> {
         logger.info("Find Launch by Page: {} and EmployeeId: {}", pageable, employeeId)
-        val page: Page<Launch> = launchRepository.findByEmplooyeId(employeeId, pageable)
+        val page: Page<Launch> = launchRepository.findByEmployeeId(employeeId, pageable)
         return page
     }
 

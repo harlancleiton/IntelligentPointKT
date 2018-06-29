@@ -6,5 +6,5 @@ import org.springframework.data.domain.Pageable
 import org.springframework.data.mongodb.repository.MongoRepository
 
 interface LaunchRepository : MongoRepository<Launch, String> {
-    fun findByEmplooyeId(employeeId: String, pageable: Pageable): Page<Launch>
+    fun findByEmployeeId(employeeId: String, pageable: Pageable): Page<Launch>
 }
