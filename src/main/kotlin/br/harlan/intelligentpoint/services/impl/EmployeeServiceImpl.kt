@@ -21,6 +21,14 @@ class EmployeeServiceImpl(val employeeRepository: EmployeeRepository) : Employee
         return employee
     }
 
+    override fun findByCpf(cpf: String): Optional<Employee> {
+        logger.info("Find Employee by CPF: {}", cpf)
+        val employee: Optional<Employee> = employeeRepository.findByCpf(cpf)
+        if (!employee.isPresent)
+            throw ObjectNotFoundException("Employee not found for CPF " + cpf)
+        return employee
+    }
+
     override fun insert(employee: Employee): Employee {
         logger.info("Inserting Employee: {}", employee)
         return employeeRepository.save(employee)
